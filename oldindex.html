@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Calculator</title>
+
+<script language="javascript" type="text/javascript">
+function packageTotal(){
+    //Enter in prices here
+    var x = 5;
+    var y = 10;
+    var p = x + y*12;
+    var b = y * 12;
+
+    if(document.calculator.getElementById('personal').checked) {
+        //Basic package is checked
+        document.calculator.total.value=b;
+    }
+    else if(document.calculator.getElementById('family').checked) {
+        //Pro package is checked
+        document.calculator.total.value=p;
+    } 
+    else if(document.calculator.getElementById('business').checked) {
+        //Pro package is checked
+        document.calculator.total.value=p;
+    } 
+    else if(document.calculator.getElementById('basicProgram').checked) {
+        //Basic package is checked
+        document.calculator.total.value=b;
+    }
+    else if(document.calculator.getElementById('proProgram').checked) {
+        //Pro package is checked
+        document.calculator.total.value=p;
+    }
+    else {
+	document.calculator.total.value=12;
+	}
+//stop the form from submitting
+//place this wherever you need it in your logic
+return false;
+}
+</script>
+</head>
+<body>
+<div align=left><img src="lighthouse.jpg" width=600px height=300px><br>
+<h1>Subscribe to Glocation.Info Today</h1></div>
+
+<form action="/action_page.php">
+  <p>Please select your plan:</p>
+  <input type="radio" id="personal" name="gender" value="Personal Communications">
+  <label for="male">Personal Plan</label><br>
+  <input type="radio" id="family" name="gender" value="Family Communications">
+  <label for="female"><a href=#>Family-10</a></label><br>
+  <input type="radio" id="business" name="sb10" value="Small Business - 10">
+  <label for="other"><a href=#>Small Business-10</a></label>
+  <input type="radio" id="business" name="sb100" value="Small Business - 100">
+  <label for="other"><a href=#>Small Business-100</a></label>
+ <input type="radio" id="business" name="sb1000" value="Small Business - 1000">
+  <label for="other"><a href=#>Small Business-1000</a></label>
+  <br>  
+
+</form>
+<form name="calculator">
+
+<!-- User fills out form here -->
+
+<br />
+<input type="radio" name="programType" id="basicProgram" value="Basic" checked onChange="packageTotal()"/> Basic
+<input type="radio" name="programType" id="proProgram" value="Pro" checked onChange="packageTotal()" /> Pro
+
+<!-- Here result will be displayed. -->
+
+<br />
+Your total price is: <input type="text" name="total">
+<input type="button" value="Submit" onclick="javascript:packageTotal();">
+
+
+</form>
+</body>
+</html>

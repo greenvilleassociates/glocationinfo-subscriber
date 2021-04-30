@@ -1,0 +1,108 @@
+<html>
+
+<head>
+
+<title>Subscribe</title>
+
+<script language="javascript" type="text/javascript">
+
+    function zeropackage()
+    {
+    document.calculator.total.value=null;
+    return false;
+    }
+    
+    function setcookie()
+    {
+    return false;
+    }
+
+    function packageTotal()
+    {
+    //Enter in prices here
+    var f = 60.00.toLocaleString(undefined,{ minimumFractionDigits: 2 });
+    var p = 8.50.toLocaleString(undefined,{ minimumFractionDigits: 2 });
+    var b10 = (1000).toLocaleString(undefined,{ minimumFractionDigits: 2 });
+    var b100 = (5000).toLocaleString(undefined,{ minimumFractionDigits: 2 });
+    var e = (10000).toLocaleString(undefined,{ minimumFractionDigits: 2 }); 
+    var value = (100000).toLocaleString(undefined,{ minimumFractionDigits: 2 });
+
+
+    	if(document.getElementById('basicProgram').checked) 
+        {
+        //Basic package is checked
+        document.calculator.total.value=b10;
+	}
+        else if(document.getElementById('proProgram').checked) 
+        {
+        //Pro package is checked
+        document.calculator.total.value=b100;
+        }
+ 	else if(document.getElementById('enterpriseProgram').checked) 
+        {
+        //Pro package is checked
+        document.calculator.total.value=e;
+        } 
+	else if(document.getElementById('familyProgram').checked) 
+        {
+        //Pro package is checked
+        document.calculator.total.value=f;
+        } 
+	else if(document.getElementById('personalProgram').checked) 
+        {
+        //Pro package is checked
+        document.calculator.total.value=p;
+        } 
+	//stop the form from submitting
+	//place this wherever you need it in your logic
+	console.log(value);
+        return false;
+     }
+</script>
+</head>
+
+<body>
+<div align=left><img src="lighthouse.jpg" width=1100px height=275px><br>
+<h1>&nbsp&nbsp&nbspSubscribe to Glocation.Info Today!</h1></div>
+<h3>&nbsp&nbsp&nbsp&nbsp&nbspAll Plans Receive</h3>
+<ul>
+<li>Glocation.TV Lite</li>
+<li>Glocation.Info Web Mail</li>
+<li>Outlook/Imap Mail Extensions</li>
+<li>3CX Unified Communications with Instant Messaging & Personal Communication Phone Number/DID</li>
+<li>Personal VPN Access</li>
+<li>Digital Footprints Personal Edition</li>
+<li>Glocation.Info Personal or Team Blogger</li>
+<li>Reuters News</li>
+<li>Enhanced Search Engine</li>
+<li>Android, Windows Mobile, or Apple Mobile Client</li>
+</ul>
+
+
+<form name="calculator" action="subscriber.cfm">
+<h3>&nbsp&nbsp&nbsp&nbsp&nbspPlease select your plan:</h3>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="programType" id="personalProgram" value="Personal" onChange="zeropackage()"/><a href="personal.html" target="_blank" coords="0,0,253,27"> Personal</a><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="programType" id="familyProgram" value="Family" onChange="zeropackage()"/> <a href="family.html" target="_blank" coords="0,0,253,27">Family&nbsp(Up To 10 Subscribers)</a><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="programType" id="basicProgram" value="Basic" onChange="zeropackage()"/> <a href="business10.html" target="_blank" coords="0,0,253,27">Business-10</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="programType" id="proProgram" value="Pro" onChange="zeropackage()"/> <a href="business100.html" target="_blank" coords="0,0,253,27">Business-100-HA</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="programType" id="enterpriseProgram" value="HAEnterprise" onChange="zeropackage()"/> <a href="business1000.html" target="_blank" coords="0,0,253,27">Business-1000-HA</a>
+<!-- Here result will be displayed. -->
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="Calculate Plan Price" onclick="javascript:packageTotal();">
+&nbsp&nbsp&nbsp&nbsp&nbspYour Monthly Price is: <input type="text" name="total">
+<BR>
+<h3>&nbsp&nbsp&nbsp&nbsp&nbspIm Ready to Subscribe</h3>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="Subscribe Personal" onclick="javascript:setCookie();">
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="Subscribe Family" onclick="javascript:setCookie();">
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="Subscribe Business" onclick="javascript:setCookie();">
+</form>
+<h3>&nbsp&nbsp&nbsp&nbsp&nbspService Highlights(GlocationTv, MobilePhoneClient, Webmail, ReutersNews)</h3>
+<div width=800px align=left>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="glocationtv.jpg" width=250px height=150px>&nbsp&nbsp<img src="3cx.jpg" width=250px height=150px>&nbsp&nbsp<img src="webmail.jpg" width=250px height=150px>&nbsp&nbsp<img src="reuters.jpg" width=250px height=150px></div>
+<h3>&nbsp&nbsp&nbsp&nbsp&nbspUpgrade Options</h3>
+<ul>
+<li>Glocation.TV.Pro</li>
+<li>Family Plans for up to 10 Subscribers get their own PersonalPBX! And 1 Desktop Phone For your House!</li>
+<li>Business Packages including full Remote Desktops, eCommerce, Enterprise VPN, Hybrid Cloud, FusionPro ERP Systems(10,100,1000 Users Licenses)</li>
+</ul>
+</body>
+</html>
